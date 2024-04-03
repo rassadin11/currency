@@ -3,12 +3,9 @@ import btc from '../../assets/btc.svg'
 import { Link } from 'react-router-dom'
 
 const Currency = () => {
-
-    console.log(name)
-    
     return (
         <div className={s.block}>
-            <img src={btc} alt="Bitcoin" className={s.image}/>
+            <img src={btc} alt="Bitcoin" className={s.image} />
             <div className={s.wrapper}>
                 <div className={s.title}>
                     <p><Link to="/currency/bitcoin">Bitcoin</Link> <span className={s.ticker}>( BTC )</span></p>
