@@ -2,16 +2,16 @@ import s from './Currency.module.scss'
 import btc from '../../assets/btc.svg'
 import { Link } from 'react-router-dom'
 
-const Currency = () => {
+const Currency = ({ title, ticker, description, price }) => {
     return (
         <div className={s.block}>
-            <img src={btc} alt="Bitcoin" className={s.image} />
+            <img src={btc} alt={ticker} className={s.image} />
             <div className={s.wrapper}>
                 <div className={s.title}>
-                    <p><Link to="/currency/bitcoin">Bitcoin</Link> <span className={s.ticker}>( BTC )</span></p>
-                    <p><span className={s.price}><span>66.067</span> $</span></p>
+                    <p><Link to={"/currency/" + title}>{title}</Link> <span className={s.ticker}>( {ticker} )</span></p>
+                    <p><span className={s.price}><span>{price}</span> $</span></p>
                 </div>
-                <p className={s.shortDescription}>Bitcoin is a decentralized cryptocurrency originally described in a 2008 whitepaper by a person, or group of people, using the alias Satoshi Nakamoto. It was launched soon after, in January 2009.</p>
+                <p className={s.shortDescription}>{description}</p>
             </div>
         </div>
     )
